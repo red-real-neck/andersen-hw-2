@@ -1,5 +1,7 @@
 function makeObjectDeepCopy(obj) {
-    const result = {};
+    
+    if (obj instanceof Object) {
+        const result = {};
 
     for (key in obj) {
         if (obj[key] instanceof Array) {
@@ -19,4 +21,9 @@ function makeObjectDeepCopy(obj) {
     }
 
     return result;
+    } else {
+        return obj;
+    }
+
+    
 }
