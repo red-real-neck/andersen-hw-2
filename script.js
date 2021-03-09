@@ -1,22 +1,3 @@
-const obj = {
-    a: 1,
-    b: 2,
-    c: {
-        kek: 'lol',
-        chik: 'chirik',
-        arr: [1, 2, 3,],
-        anotherArr: [{ jepa: 'da' }, { popa: 'net' }]
-    }
-}
-
-const obj1 = {
-    a: {
-        b: {
-            c: [[{lol: 'kek'}, {kek: 'lol'}], [['lopa']]]
-        }
-    }
-}
-
 function makeObjectDeepCopy(obj) {
     const result = {};
 
@@ -39,6 +20,3 @@ function makeObjectDeepCopy(obj) {
 
     return result;
 }
-
-const newObj = makeObjectDeepCopy(obj);
-console.log(newObj)
