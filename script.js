@@ -1,6 +1,6 @@
 function makeObjectDeepCopy(obj) {
 
-    if (!(obj instanceof Object || obj instanceof Array)) {
+    if (!(obj instanceof Object)) {
         return obj;
     }
 
@@ -16,8 +16,6 @@ function makeObjectDeepCopy(obj) {
                     return makeObjectDeepCopy(item);
                 }
             });
-        } else if (typeof obj[key] === 'function') {
-            result[key] = obj[key];
         } else if (obj[key] instanceof Object) {
             result[key] = makeObjectDeepCopy(obj[key]);
         } else {
@@ -28,4 +26,12 @@ function makeObjectDeepCopy(obj) {
 
     return result;
 
+}
+
+function selectFromInterval(arr, firstValueOfInterval, secondValueOfInterval) {
+    let result = [];
+
+    
+
+    return result;
 }
