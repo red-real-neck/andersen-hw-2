@@ -29,9 +29,15 @@ function makeObjectDeepCopy(obj) {
 }
 
 function selectFromInterval(arr, firstValueOfInterval, secondValueOfInterval) {
-    let result = [];
+    let result;
+    const startOfInterval = (firstValueOfInterval < secondValueOfInterval) ? firstValueOfInterval : secondValueOfInterval;
+    const endOfInterval = (firstValueOfInterval < secondValueOfInterval) ? secondValueOfInterval : firstValueOfInterval;
 
-    
+    result = arr.filter(item => item > startOfInterval && item <= endOfInterval);
 
     return result;
 }
+
+const test = selectFromInterval([1, 2, 3, 4, 5, 6, 7], 1, 4);
+
+console.log(test);
