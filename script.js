@@ -61,7 +61,3 @@ const myIterable = {
         }
     }
 }
-
-for (let item of myIterable) {
-    console.log(item);
-}
