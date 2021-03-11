@@ -29,11 +29,11 @@ function makeObjectDeepCopy(obj) {
 }
 
 function selectFromInterval(arr, firstValueOfInterval, secondValueOfInterval) {
-    if ( !(arr instanceof Array) || arr.includes(/\D+/) || typeof firstValueOfInterval !== 'number' || typeof secondValueOfInterval !== 'number') {
+    if ( !(arr instanceof Array) || arr.some(item => !(typeof item === 'number')) || typeof firstValueOfInterval !== 'number' || typeof secondValueOfInterval !== 'number') {
         throw new Error('error message');
     }
 
-    let result;
+    let result = [];
     const startOfInterval = (firstValueOfInterval < secondValueOfInterval) ? firstValueOfInterval : secondValueOfInterval;
     const endOfInterval = (firstValueOfInterval < secondValueOfInterval) ? secondValueOfInterval : firstValueOfInterval;
 
@@ -41,14 +41,3 @@ function selectFromInterval(arr, firstValueOfInterval, secondValueOfInterval) {
 
     return result;
 }
-
-const test = selectFromInterval([1, 2, 3, 4, 5, 6, 7], 1, 4);
-const test2 = selectFromInterval([1,3,5], 5, 2);
-const test3 = selectFromInterval([-2, -15, 0, 4], -13, -5);
-const test4 = selectFromInterval(['aaa'], 2, 3);
-
-
-console.log(test);
-console.log(test2);
-console.log(test3);
-console.log(test4);
